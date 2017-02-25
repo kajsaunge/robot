@@ -1,0 +1,23 @@
+{
+  "name": "map-of",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.5.0",
+    "normalize.css": "^5.0.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.0"
+  },
+  "scripts": {
+    "test": "test",
+    "scss": "node-sass --output-style compressed -o build/css src/scss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://kajsaunge@bitbucket.org/kajsaunge/map-of.git/"
+  },
+  "author": "Kajsa Unge",
+  "license": "ISC"
+}
