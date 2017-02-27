@@ -32,7 +32,9 @@ footer {
   width: 100%;
   min-height: 40px;
   padding: 10px 20px;
-  background-color: tomato;
+}
+.header {
+  background: lighten(black, 50%);
 }
 main {
   display: flex;
@@ -45,7 +47,7 @@ main {
 
 .box {
   display: flex;
-  background-color: ivory;
+  background: lighten(black, 50%);
   width: calc(100% * (1/16));
   @media only screen and (max-width: 1000px) {
     width: calc(100% * (1/14));
@@ -59,52 +61,62 @@ main {
   @media only screen and (max-width: 400px) {
     width: calc(100% * (1/9));
   }
-
-
-  &:nth-child(1) {
-      background: darken($red, 30%)
-  }
-   &:nth-child(2) {
-     background: darken($red, 20%)
-  }
-  &:nth-child(3) {
-    background: darken($red, 10%)
-  }
-   &:nth-child(4) {
-    background: $red;
-  }
-  &:nth-child(5) {
-   background: lighten($red, 10%);
-  }
-  &:nth-child(6) {
-    background: lighten($red, 20%);
-  }
-  &:nth-child(7) {
-    background: lighten($red, 30%);
-  }
-  &:nth-child(8) {
-    background: darken($orange, 30%);
-  }
-  &:nth-child(9) {
-    background: darken($orange, 20%);
-  }
-  &:nth-child(10) {
-    background: darken($orange, 10%);
-  }
-  &:nth-child(11) {
-    background: $orange;
-  }
-  &:nth-child(12) {
-    background: lighten($orange, 10%);
-  }
-  &:nth-child(13) {
-    background: lighten($orange, 20%);
-  }
-  &:nth-child(14) {
-  background: lighten($orange, 30%);
-}
   &:hover {
     opacity: .7;
     transition: .3s;
   }
+}
+.box1 {
+    background: darken($red, 30%)
+}
+ .box2 {
+   background: darken($red, 20%)
+}
+.box3 {
+  background: darken($red, 10%)
+}
+ .box4 {
+  background: $red;
+}
+.box5 {
+ background: lighten($red, 10%);
+}
+.box6 {
+  background: lighten($red, 20%);
+}
+.box7 {
+  background: lighten($red, 30%);
+}
+.box8 {
+  background: darken($orange, 30%);
+}
+.box9 {
+  background: darken($orange, 20%);
+}
+.box10 {
+  background: darken($orange, 10%);
+}
+.box11 {
+  background: $orange;
+}
+.box12 {
+  background: lighten($orange, 10%);
+}
+.box13 {
+  background: lighten($orange, 20%);
+}
+.box14 {
+  background: lighten($orange, 30%);
+}
+.box53 {
+  background: lighten(black, 10%);
+}
+.box44 {
+  background: lighten(black, 20%);
+}
+.box68 {
+  background: black;
+}
+.box73 {
+  background: lighten(black, 30%);
 }
