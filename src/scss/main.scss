@@ -1,7 +1,110 @@
+// VARIABLES
+$red: red;
+$orange: orange;
+$green: green;
+
+// FIXES
+* {
+  box-sizing: border-box;
+}
+// BASE
+body {
+  font-family: sans-serif;
+}
+h1 {
+  color: white;
+  background-color: #333;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+// STRUCTURE
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 header,
 footer {
   width: 100%;
   min-height: 40px;
   padding: 10px 20px;
   background-color: tomato;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.box {
+  display: flex;
+  background-color: ivory;
+  width: calc(100% * (1/16));
+  @media only screen and (max-width: 1000px) {
+    width: calc(100% * (1/14));
+  }
+  @media only screen and (max-width: 800px) {
+    width: calc(100% * (1/12));
+  }
+  @media only screen and (max-width: 600px) {
+    width: calc(100% * (1/10));
+  }
+  @media only screen and (max-width: 400px) {
+    width: calc(100% * (1/9));
+  }
+
+
+  &:nth-child(1) {
+      background: darken($red, 30%)
+  }
+   &:nth-child(2) {
+     background: darken($red, 20%)
+  }
+  &:nth-child(3) {
+    background: darken($red, 10%)
+  }
+   &:nth-child(4) {
+    background: $red;
+  }
+  &:nth-child(5) {
+   background: lighten($red, 10%);
+  }
+  &:nth-child(6) {
+    background: lighten($red, 20%);
+  }
+  &:nth-child(7) {
+    background: lighten($red, 30%);
+  }
+  &:nth-child(8) {
+    background: darken($orange, 30%);
+  }
+  &:nth-child(9) {
+    background: darken($orange, 20%);
+  }
+  &:nth-child(10) {
+    background: darken($orange, 10%);
+  }
+  &:nth-child(11) {
+    background: $orange;
+  }
+  &:nth-child(12) {
+    background: lighten($orange, 10%);
+  }
+  &:nth-child(13) {
+    background: lighten($orange, 20%);
+  }
+  &:nth-child(14) {
+  background: lighten($orange, 30%);
+}
+  &:hover {
+    opacity: .7;
+    transition: .3s;
+  }
 }

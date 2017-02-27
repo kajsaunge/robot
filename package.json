@@ -8,11 +8,13 @@
     "normalize.css": "^5.0.0"
   },
   "devDependencies": {
-    "node-sass": "^4.5.0"
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0"
   },
   "scripts": {
     "test": "test",
-    "scss": "node-sass --output-style compressed -o build/css src/scss"
+    "scss": "node-sass --output-style compressed -o build/css src/scss",
+    "watch-css": "nodemon -e scss -x \"npm run scss\""
   },
   "repository": {
     "type": "git",
