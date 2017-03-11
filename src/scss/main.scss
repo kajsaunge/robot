@@ -111,20 +111,20 @@ header {
 }
 #robot-right-eye {
   &.active {
-    top: 15px;
+    top: 9px;
     left: 10px;
-    width: 10px;
-    height: 5px;
-    border-radius: 30%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
     background-color: lavender;
   }
 }
 #robot-left-eye {
   &.active {
-    top: 12px;
-    left: 30px;
-    width: 10px;
-    height: 10px;
+    top: 7px;
+    left: 27px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background-color: powderBlue;
   }
