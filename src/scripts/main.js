@@ -3,7 +3,7 @@
 
 var element = document.getElementById("color-container");
 
-for(var i = 1; i <100; i++) {
+for(var i = 1; i <118; i++) {
   element.innerHTML = element.innerHTML + '<div class="box">&nbsp;</div>'
 };
 
