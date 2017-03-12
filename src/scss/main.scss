@@ -81,6 +81,14 @@ header {
     transform: scale(1);
   }
 }
+#head-krusidull {
+  &.active {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: green;
+  }
+}
 #robot-neck {
   &.active {
     top: 46px;
@@ -142,27 +150,30 @@ header {
 // ROBOT BODY
 #robot-right-arm {
   &.active {
-    top: 8px;
+    top: -12px;
     left: 167px;
     width: 15px;
-    height: 50px;
+    height: 70px;
     border-radius: 0 25px 0 0;
     transform: translateX(0) rotate(180deg);
     transform-origin: bottom left;
     transform-style: preserve-3D;
-    animation: swing 3s ease-in-out 0s 2 alternate;
+    animation:
+      wave 1.5s ease-in-out 0s 2 alternate,
+      miniDingleSecond 5s infinite 1.5s alternate;
   }
 }
 #robot-left-arm {
-    left: 79px;
-    transition: .5s;
   &.active {
-    top: 60px;
+    transition: .5s;
+    top: 58px;
     left: 63px;
     width: 15px;
-    height: 50px;
+    height: 90px;
     border-radius: 0 0 25px 0;
-    background-color: pink;
+    transform-origin: top center;
+    transform-style: preserve-3D;
+    animation: miniDingle 5s infinite ease-in-out;
   }
 }
 #robot-belly {
@@ -285,11 +296,25 @@ header {
   75% { transform: rotate(8deg); }
   100% { transform: rotate(11deg); }
 }
-@keyframes swing {
+@keyframes wave {
   0% { transform: translateX(0) rotate(180deg); }
-  75% { transform: translateX(-18px) rotate(30deg); }
+  50% { transform: translateX(-18px) rotate(30deg); }
+  60% { transform: translateX(-18px) rotate(28deg); }
+  70% { transform: translateX(-18px) rotate(30deg); }
+  80% { transform: translateX(-18px) rotate(28deg); }
+  90% { transform: translateX(-18px) rotate(30deg); }
   100% { transform: translateX(-16px) rotate(20deg); }
 }
+@keyframes miniDingle {
+  0% { transform: rotate(-1deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-1deg); }
+}
+// @keyframes miniDingleSecond {
+//   0% { transform: rotate(181deg); }
+//   50% { transform: rotate(186deg); }
+//   100% { transform: rotate(181deg); }
+// }
 
 
 #color-container {
