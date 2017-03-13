@@ -3,7 +3,7 @@
 
 var element = document.getElementById("color-container");
 
-for(var i = 1; i <118; i++) {
+for(var i = 1; i <120; i++) {
   element.innerHTML = element.innerHTML + '<div class="box">&nbsp;</div>'
 };
 
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
               break;
 
           default:
-            alert('action has invlid value');
+            alert('Love your robot');
       }
 
     }, false);

@@ -1,7 +1,5 @@
-$colors: coral, tomato, orangered, darkorange, orange, gold, silver, slategrey, teal, palegreen, lightblue, chocolate;
+$colors: coral, skyblue, mediumseagreen, steelblue, thistle, gold, slategrey, hotpink, turquoise, tomato, lightblue, mediumpurple;
 $darkGrey: #333;
-
-$header-height: 60%;
 
 
 @for $i from 1 through length($colors) {
@@ -22,10 +20,6 @@ h1 {
   color: cadetBlue;
   background-color: #333;
 }
-a {
-  color: cadetBlue;
-  text-decoration: none;
-}
 
 // STRUCTURE
 body {
@@ -35,21 +29,15 @@ body {
   height: 100vh;
 }
 header {
-  width: 100%;
-  min-height: 0;
-  background: lighten(black, 90%);
+  background: #333;
   transition: 1s;
+  overflow: hidden;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
   &.active {
-    display: flex;
-    justify-content: flex-start;
-    min-height: $header-height;
-    padding: 20px;
-    // #color-container {
-    //   margin-top: 269px;
-    // }
-  }
-  a {
-    width: 15%;
+    height: 300px;
   }
 }
 
@@ -59,12 +47,14 @@ header {
   position: absolute;
 }
 .robot-container {
-  position: relative;
-  margin: 0 auto;
-  width: 35%;
-  div {
-    background: transparent;
-  }
+  // padding: 20px;
+  // margin: 20px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
 }
 
 // ROBOT HEAD
@@ -75,7 +65,7 @@ header {
   transition-delay: .5s;
   &.active {
     top: 5px;
-    left: 90px;
+    left: 25px;
     width: 50px;
     height: 40px;
     transform: scale(1);
@@ -92,7 +82,7 @@ header {
 #robot-neck {
   &.active {
     top: 46px;
-    left: 107px;
+    left: 44px;
     width: 15px;
     height: 5px;
     background-color: black;
@@ -151,7 +141,7 @@ header {
 #robot-right-arm {
   &.active {
     top: -12px;
-    left: 167px;
+    left: 102px;
     width: 15px;
     height: 70px;
     border-radius: 0 25px 0 0;
@@ -167,7 +157,7 @@ header {
   &.active {
     transition: .5s;
     top: 58px;
-    left: 63px;
+    left: -2px;
     width: 15px;
     height: 90px;
     border-radius: 0 0 25px 0;
@@ -183,7 +173,7 @@ header {
   transition: .5s;
   &.active {
     top: 52px;
-    left: 80px;
+    left: 15px;
     width: 70px;
     height: 70px;
     transform: scale(1);
@@ -222,7 +212,7 @@ header {
 #robot-pelvis {
   &.active {
     top: 123px;
-    left: 96px;
+    left: 29px;
     width: 40px;
     height: 10px;
     background-color: tomato;
@@ -234,26 +224,27 @@ header {
   transition: .5s;
   &.active {
     top: 135px;
-    left: 85px;
+    left: 18px;
     width: 25px;
     height: 70px;
     background-color: teal;
+    animation: fadeIn .9s ease-in;
   }
 }
 #robot-left-leg {
   &.active {
     top: 135px;
-    left: 120px;
+    left: 54px;
     width: 25px;
     height: 70px;
     background-color: rosyBrown;
-    animation: pulse 10s linear 0s infinite normal;
+    animation: gradient 10s linear 5s infinite normal;
   }
 }
 #robot-right-foot {
   &.active {
     top: 207px;
-    left: 70px;
+    left: 3px;
     width: 40px;
     height: 10px;
     border-radius: 20px 0 0 0;
@@ -266,7 +257,7 @@ header {
 #robot-left-foot {
   &.active {
     top: 207px;
-    left: 119px;
+    left: 54px;
     width: 40px;
     height: 10px;
     border-radius: 0 20px 0 0;
@@ -274,7 +265,7 @@ header {
   }
 }
 
-@keyframes pulse {
+@keyframes gradient {
   0% { background-color: lightBlue; }
   50% { background-color: rosyBrown; }
   100% { background-color: lightBlue; }
@@ -310,11 +301,11 @@ header {
   50% { transform: rotate(5deg); }
   100% { transform: rotate(-1deg); }
 }
-// @keyframes miniDingleSecond {
-//   0% { transform: rotate(181deg); }
-//   50% { transform: rotate(186deg); }
-//   100% { transform: rotate(181deg); }
-// }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  50% { opacity: .5; }
+  100% { opacity: 1; }
+}
 
 
 #color-container {
@@ -323,16 +314,18 @@ header {
   flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
-  background-color: white;
+  background-color: #333;
   transition: 1s;
   &.active {
-    margin-top: 269px;
+    margin-top: 300px;
   }
 }
 .box {
   display: flex;
+  flex-grow: 1;
   background: lighten(black, 50%);
   width: calc(100% * (1/16));
+  z-index: 1;
   @media only screen and (max-width: 1000px) {
     width: calc(100% * (1/14));
   }
@@ -346,7 +339,7 @@ header {
     width: calc(100% * (1/9));
   }
   &:hover {
-    opacity: .7;
-    transition: .1s;
+    transition: .3s;
+    border-radius: 50px;
   }
 }
