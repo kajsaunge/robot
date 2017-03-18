@@ -1,29 +1,20 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+### What ###
 
-### What is this repository for? ###
+* A node project
+* ...that a 5 year old seems to enjoy the result of :)
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### How ###
 
-### How do I get set up? ###
+* scss - compiles a compressed css to /build
+* watch-css - compiles the css and keeps a watch running
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Why ###
 
-### Contribution guidelines ###
+* Learning - JS + CSS Transitions and Animations
+* Fun
 
-* Writing tests
-* Code review
-* Other guidelines
+### Who ###
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Kajsa Unge
