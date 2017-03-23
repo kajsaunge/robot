@@ -59,7 +59,7 @@ header {
 #robot-head {
   height: 0;
   transform: scale(0);
-  transition: .8s;
+  transition: .8s cubic-bezier(.17,.67,.67,1.18);
   transition-delay: .5s;
   background: repeating-linear-gradient(125deg, #333, #333 1px, #666 1px, #666 20px);
   &.active {
@@ -117,12 +117,15 @@ header {
   }
 }
 #robot-left-eye {
+  transform: scale(0);
+  transition: .4s cubic-bezier(.17,.67,.5,1.46);
   &.active {
     top: 7px;
     left: 27px;
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    transform: scale(1);
   }
 }
 #robot-mouth {
@@ -167,7 +170,7 @@ header {
   height: 0;
   transform: scale(0);
   transform-origin: 80% 20%;
-  transition: .5s;
+  transition: .5s cubic-bezier(.17,.67,.67,1.18);
   &.active {
     top: 52px;
     left: 15px;
