@@ -1,9 +1,7 @@
 npm-debug*
 node_modules/
-public/
-.env
+build/
 .vscode
 .DS_Store
 .tmp*
-*.orig
-browserify-cache.json
+*.todo

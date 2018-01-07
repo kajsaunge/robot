@@ -15,6 +15,7 @@ $darkGrey: #333;
 // BASE
 body {
   font-family: sans-serif;
+  background-color: #333;
 }
 h1 {
   color: cadetBlue;
@@ -37,15 +38,15 @@ header {
    width: 100%;
    height: 100%;
   &.active {
+    position: absolute;
     height: 300px;
   }
 }
+nav {
+  background: green;
+}
 
 // ROBOT ////////////////////////////////////////////////////////////////
-// HELPERS
-.active {
-  position: absolute;
-}
 .robot-container {
   position: absolute;
   top: 30%;
@@ -63,6 +64,7 @@ header {
   transition-delay: .5s;
   background: repeating-linear-gradient(125deg, #333, #333 1px, #666 1px, #666 20px);
   &.active {
+    position: absolute;
     top: 5px;
     left: 25px;
     width: 50px;
@@ -72,6 +74,7 @@ header {
 }
 #head-krusidull {
   &.active {
+    position: absolute;
     content: "";
     width: 10px;
     height: 10px;
@@ -79,6 +82,7 @@ header {
 }
 #robot-neck {
   &.active {
+    position: absolute;
     top: 46px;
     left: 44px;
     width: 15px;
@@ -89,6 +93,7 @@ header {
 }
 #robot-right-ear {
   &.active {
+    position: absolute;
     top: 12px;
     left: 52px;
     width: 10px;
@@ -97,6 +102,7 @@ header {
 }
 #robot-left-ear {
   &.active {
+    position: absolute;
     top: 12px;
     left: -12px;
     width: 10px;
@@ -105,6 +111,7 @@ header {
 }
 #robot-right-eye {
   &.active {
+    position: absolute;
     top: 9px;
     left: 10px;
     width: 8px;
@@ -120,6 +127,7 @@ header {
   transform: scale(0);
   transition: .4s cubic-bezier(.17,.67,.5,1.46);
   &.active {
+    position: absolute;
     top: 7px;
     left: 27px;
     width: 15px;
@@ -130,6 +138,7 @@ header {
 }
 #robot-mouth {
   &.active {
+    position: absolute;
     top: 28px;
     left: 10px;
     width: 30px;
@@ -140,6 +149,7 @@ header {
 // ROBOT BODY
 #robot-right-arm {
   &.active {
+    position: absolute;
     top: -12px;
     left: 102px;
     width: 15px;
@@ -155,6 +165,7 @@ header {
 }
 #robot-left-arm {
   &.active {
+    position: absolute;
     transition: .5s;
     top: 58px;
     left: -2px;
@@ -172,45 +183,60 @@ header {
   transform-origin: 80% 20%;
   transition: .5s cubic-bezier(.17,.67,.67,1.18);
   &.active {
+    position: absolute;
     top: 52px;
     left: 15px;
     width: 70px;
     height: 70px;
     transform: scale(1);
-    // HEART
-    #heart {
-      display: none;
-      display: inline-block;
-      position: absolute;
-      left: -64px;
-      top: 18px;
-      width: 10px;
-      height: 10px;
-    }
-    #heart:before,
-    #heart:after {
-        position: absolute;
-        content: "";
-        left: 109px;
-        top: 0;
-        width: 9px;
-        height: 15px;
-        background: azure;
-        border-radius: 50px 50px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-        animation: beat 1.5s ease .5s infinite alternate;
-    }
-    #heart:after {
-      left: 101px;
-      transform: rotate(45deg);
-      transform-origin :100% 100%;
-      animation: beatRight 1.5s ease .5s infinite alternate;
-    }
   }
 }
+// HEART
+#heart {
+  display: none;
+  display: inline-block;
+  position: absolute;
+  left: -64px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  height: 0;
+  transform: scale(0);
+  transform-origin: 80% 20%;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    left: 109px;
+    top: 0;
+    width: 9px;
+    height: 15px;
+    background: tomato;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    animation: beat 1.5s ease .5s infinite alternate;
+  }
+  &:after {
+    left: 101px;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    animation: beatRight 1.5s ease .5s infinite alternate;
+  }
+  &.active {
+    position: absolute;
+    left: -64px;
+    top: 18px;
+    width: 10px;
+    height: 10px;
+    transform: scale(1);
+  }
+}
+
+
 #robot-pelvis {
   &.active {
+    position: absolute;
     top: 123px;
     left: 29px;
     width: 40px;
@@ -223,6 +249,7 @@ header {
   top: -70px;
   transition: .5s;
   &.active {
+    position: absolute;
     top: 135px;
     left: 18px;
     width: 25px;
@@ -232,6 +259,7 @@ header {
 }
 #robot-left-leg {
   &.active {
+    position: absolute;
     top: 135px;
     left: 54px;
     width: 25px;
@@ -241,6 +269,7 @@ header {
 }
 #robot-right-foot {
   &.active {
+    position: absolute;
     top: 207px;
     left: 3px;
     width: 40px;
@@ -254,6 +283,7 @@ header {
 }
 #robot-left-foot {
   &.active {
+    position: absolute;
     top: 207px;
     left: 54px;
     width: 40px;
@@ -330,7 +360,7 @@ header {
 }
 .box {
   display: flex;
-  flex-grow: 1;
+  // flex-grow: 1;
   background: lighten(black, 50%);
   width: calc(100% * (1/16));
   z-index: 1;

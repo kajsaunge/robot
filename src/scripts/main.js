@@ -13,6 +13,21 @@ document.addEventListener('DOMContentLoaded', function () {
   var robotPart = initRobotParts();
   var createRobotPart = robotPart.head;
   var nextPart = 1;
+  let restartButton = document.getElementById('restartButton');
+
+  let restart = () => {
+    restartButton.addEventListener('click', function() {
+      let activeClasses = document.querySelectorAll('.active');
+      for (let i = 0; i < activeClasses.length; i++) {
+        activeClasses[i].classList.remove('active');
+        robotPart = initRobotParts();
+        createRobotPart = robotPart.head;
+        nextPart = 1;
+      }
+    })
+  }
+  restart();
+
 
   for (var i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener('click', function () {
@@ -109,6 +124,11 @@ document.addEventListener('DOMContentLoaded', function () {
               robotLeftFootElement.style.background = getComputedStyle(this).backgroundColor;
               createRobotPart += nextPart;
               break;
+            case robotPart.heart:
+              var robotHeartElement = document.getElementById('heart');
+              robotHeartElement.className = "active";
+              createRobotPart += nextPart;
+              break;
 
           default:
             alert('Love your robot');
@@ -135,5 +155,6 @@ function initRobotParts() {
     rightLeg: 13,
     rightFoot: 14,
     leftFoot: 15,
+    heart: 16,
   }
 };
