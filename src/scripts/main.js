@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var createRobotPart = robotPart.head;
   var nextPart = 1;
   let restartButton = document.getElementById('restartButton');
+  let robotControllersContainer = document.getElementById('robotControllersContainer');
 
   let restart = () => {
     restartButton.addEventListener('click', function() {
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var robotHeadElement = document.getElementById('robot-head');
             robotHeadElement.className = "active";
             document.getElementById('color-container').className = "active";
+            robotControllersContainer.classList.add('active');
             robotHeadElement.style.background = getComputedStyle(this).backgroundColor;
             createRobotPart += nextPart;
             break;
