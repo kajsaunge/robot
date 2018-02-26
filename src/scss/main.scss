@@ -9,7 +9,7 @@ $darkGrey: #333;
 }
 
 // FIXES
-* {
+*, *:before, *:after, *::before, *::after {
   box-sizing: border-box;
 }
 // BASE
@@ -43,14 +43,31 @@ header {
   }
 }
 nav {
-  bottom: -26px;
-  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 0;
+  // margin-bottom: 26px;
+  padding-right: 16px;
+  padding-left: 16px;
+  opacity: 0;
+  visibility: hidden;
   &.active {
     transition: bottom 1s ease-in;
+    height: 26px;
+    opacity: 1;
+    visibility: visible;
     position: absolute;
     bottom: 16px;
+    animation: fadeIn 1s;
   }
 }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .robot-controllers {
   border: none;
   outline: none;
@@ -65,10 +82,45 @@ nav {
     margin-right: 0;
   }
   &:hover {
-    background: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .1);
   }
   &:active {
     background: rgba(255, 255, 255, .2);
+  }
+}
+
+#roundButton {
+  &.active {
+    background: black;
+  }
+}
+#borderButton {
+  &.active {
+    background: black;
+  }
+}
+#matteButton {
+  &.active {
+    background: black;
+  }
+}
+
+.robot-container > div, .robot-container > div > div {
+  &.active.round {
+    transition: .1s;
+    border-radius: 10px !important;
+  }
+}
+.robot-container > div, .robot-container > div > div {
+  &.active.border:not(#heart) {
+    transition: .1s;
+    border: 1px solid white;
+  }
+}
+.robot-container > div, .robot-container > div > div {
+  &.active.matte {
+    transition: .1s;
+    filter: saturate(50%);
   }
 }
 
@@ -86,7 +138,7 @@ nav {
 #robot-head {
   height: 0;
   transform: scale(0);
-  transition: .8s cubic-bezier(.17,.67,.67,1.18);
+  transition: .3s cubic-bezier(.17,.67,.67,1.18);
   background: repeating-linear-gradient(125deg, #333, #333 1px, #666 1px, #666 20px);
   &.active {
     position: absolute;
@@ -291,7 +343,6 @@ nav {
     left: 54px;
     width: 25px;
     height: 70px;
-    animation: gradient 10s linear 5s infinite normal;
   }
 }
 #robot-right-foot {
@@ -320,14 +371,9 @@ nav {
   }
 }
 
-@keyframes gradient {
-  0% { background-color: lightBlue; }
-  50% { background-color: rosyBrown; }
-  100% { background-color: lightBlue; }
-}
 @keyframes beat {
   0% {transform: rotate(-45deg) scale(1);}
-  50% {transform: rotate(-45deg) scale(1.1);}
+  50% {transform: rotate(-45deg) scale(1.2);}
   100% {transform: rotate(-45deg) scale(1);}
 }
 @keyframes beatRight {
@@ -381,18 +427,30 @@ nav {
   min-height: 100vh;
   background-color: #333;
   transition: 1s;
+  // css grid
+  // display: grid;
+  // grid-gap: 10px;
+  // grid-template-columns: repeat(32, 100px);
+  // grid-template-rows: 100px 100px 100px;
+  // grid-auto-flow: column;
+  // justify-content: center;
   &.active {
     margin-top: 300px;
   }
+  // @media only screen and (max-width: 500px) {
+  //   background-color: white;
+  //   grid-template-columns: repeat(16, 100px);
+  //   grid-auto-flow: row;
+  // }
 }
 .box {
   display: flex;
-  // flex-grow: 1;
   background: lighten(black, 50%);
   width: calc(100% * (1/16));
   z-index: 1;
   border: 5px solid transparent;
   transition: border 1s;
+  filter: saturate(80%);
   @media only screen and (max-width: 1000px) {
     width: calc(100% * (1/14));
   }

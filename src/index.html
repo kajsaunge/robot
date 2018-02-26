@@ -31,13 +31,22 @@
       <div id="robot-right-foot"></div>
       <div id="robot-left-foot"></div>
     </div>
-      <!-- only show when robot creation has started -->
-  <nav id="robotControllersContainer" class="nav">
+<!-- only show when robot creation has started -->
+<nav id="robotControllersContainer" class="nav">
+    <div id="styleChanger">
+      <button id="roundButton" class="robot-controllers">Round</button>
+      <button id="borderButton" class="robot-controllers">Border</button>
+      <button id="matteButton" class="robot-controllers">Matte</button>
+    </div>
+    <div>
       <button id="sadeButton" class="robot-controllers save-button">Save as gif</button>
       <button id="restartButton" class="robot-controllers start-over-button">Start over</button>
-    </nav>
+    </div>
+  </nav>
   </header>
+
   <main id="color-container">
+
     <!-- innerHTML rendered by js -->
   </main>
   <script src="scripts/main.js" type="text/javascript"></script>
