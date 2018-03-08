@@ -1,5 +1,5 @@
-// What do I want to do?
-// Clicka a swatch to add that color to the header
+// on start over do not fold up
+// last thing is a speach bubble
 
 var element = document.getElementById("color-container");
 
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let controllers = document.getElementsByClassName('robot-controllers');
 
+  let node = document.getElementById('robot');
 
   let roundStyle = () => {
     roundButton.addEventListener('click', function() {
@@ -69,7 +70,11 @@ document.addEventListener('DOMContentLoaded', function () {
     restartButton.addEventListener('click', function() {
       let activeClasses = document.querySelectorAll('.active');
       for (let i = 0; i < activeClasses.length; i++) {
-        activeClasses[i].classList.remove('active');
+        if (activeClasses[i] === header || activeClasses[i] === element) {
+          console.log('FISK!!!!');
+        } else {
+          activeClasses[i].classList.remove('active');
+        }
         robotPart = initRobotParts();
         createRobotPart = robotPart.head;
         nextPart = 1;
@@ -219,9 +224,13 @@ document.addEventListener('DOMContentLoaded', function () {
             addFilter(robotHeartElement);
             createRobotPart += nextPart;
             break;
-
-          default:
-            alert('Love your robot');
+        case robotPart.speachBubble:
+          var speachBubbleElement = document.getElementById('speachBubble');
+          speachBubbleElement.className = "active";
+          addFilter(speachBubbleElement);
+          createRobotPart += nextPart;
+        default:
+          console.log('It\'s all done MF');
       }
 
     }, false);
@@ -246,5 +255,6 @@ function initRobotParts() {
     rightFoot: 14,
     leftFoot: 15,
     heart: 16,
+    speachBubble: 17,
   }
 };

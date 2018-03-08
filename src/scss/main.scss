@@ -370,6 +370,39 @@ nav {
     background-color: darkSlateBlue;
   }
 }
+#speachBubble {
+  height: 0;
+  transform: scale(0);
+  transition: .3s cubic-bezier(.17,.67,.67,1.18);
+  background: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: left;
+  &:before {
+    position: absolute;
+    content: "";
+    top: 14px;
+    left: -6px;
+    width: 14px;
+    height: 14px;
+    background: white;
+    transform: rotate(45deg)
+  }
+  &.active {
+    position: absolute;
+    top: 15px;
+    left: 125px;
+    height: 40px;
+    border-radius: 4px;
+    transform: scale(1);
+    transition-delay: .5s;
+    transform-origin: left;
+  }
+}
 
 @keyframes beat {
   0% {transform: rotate(-45deg) scale(1);}

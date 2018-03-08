@@ -8,6 +8,7 @@
     "normalize.css": "^5.0.0"
   },
   "devDependencies": {
+    "dom-to-image": "^2.6.0",
     "node-sass": "^4.5.0",
     "nodemon": "^1.11.0"
   },
