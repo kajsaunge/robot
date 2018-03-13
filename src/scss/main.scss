@@ -77,6 +77,7 @@ nav {
   padding: 6px 9px;
   margin: 0;
   margin-right: 8px;
+  border: 1px solid transparent;
   transition: background-color .2s ease-in;
   &:last-child {
     margin-right: 0;
@@ -87,22 +88,45 @@ nav {
   &:active {
     background: rgba(255, 255, 255, .2);
   }
+  &.active {
+    background: black;
+    border-bottom: 1px solid coral;
+  }
+}
+.start-over-button {
+  border-radius: 2%;
+  padding: 0 12px 0 26px;
+  height: 36px;
+  top: -10px;
+  position: relative;
+  right: 0;
+  transition: .2s ease-out;
+  transform-origin: right bottom;
+  color: white;
+  span {
+    position: absolute;
+    top: 14px;
+    left: 9px;
+  }
+  &.getAttention {
+    font-size: 18px;
+    animation: pulse 5s ease-in-out .2s 6 forwards;
+    transform: scale(1.1);
+    padding: 0 12px 0 36px;
+    span {
+      position: absolute;
+      top: 11px;
+      left: 9px;
+    }
+  }
 }
 
-#roundButton {
-  &.active {
-    background: black;
-  }
-}
-#borderButton {
-  &.active {
-    background: black;
-  }
-}
-#matteButton {
-  &.active {
-    background: black;
-  }
+@keyframes pulse {
+  0% { opacity: 1 }
+  25% { opacity: .8 }
+  50% { opacity: 1 }
+  75% { opacity: .8 }
+  100% { opacity: 1 }
 }
 
 .robot-container > div, .robot-container > div > div {

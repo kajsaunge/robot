@@ -66,14 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  let restart = () => {
+  let restart = (getAttention) => {
     restartButton.addEventListener('click', function() {
       let activeClasses = document.querySelectorAll('.active');
       for (let i = 0; i < activeClasses.length; i++) {
+        // this if needs refactoring
         if (activeClasses[i] === header || activeClasses[i] === element) {
-          console.log('FISK!!!!');
         } else {
           activeClasses[i].classList.remove('active');
+        }
+        if (restartButton.classList.contains('getAttention')) {
+          restartButton.classList.remove('getAttention')
         }
         robotPart = initRobotParts();
         createRobotPart = robotPart.head;
@@ -229,8 +232,10 @@ document.addEventListener('DOMContentLoaded', function () {
           speachBubbleElement.className = "active";
           addFilter(speachBubbleElement);
           createRobotPart += nextPart;
+          break;
         default:
-          console.log('It\'s all done MF');
+          restartButton.classList.add('getAttention');
+          console.log('It\'s all done :)');
       }
 
     }, false);
